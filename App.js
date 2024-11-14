@@ -7,7 +7,7 @@ function App() {
   const [filter, setFilter] = useState("all"); // "all", "done", "in-progress"
   const [newTask, setNewTask] = useState("");
 
-  // اضافه کردن وظیفه جدید
+  
   const addTask = () => {
     if (newTask.trim() !== "") {
       setTasks([...tasks, { id: Date.now(), text: newTask, done: false }]);
@@ -24,12 +24,12 @@ function App() {
     );
   };
 
-  // حذف وظیفه
+  
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  // فیلتر کردن وظایف
+ 
   const filteredTasks = tasks.filter((task) => {
     const matchesSearch = task.text.toLowerCase().includes(search.toLowerCase());
     const matchesFilter =
